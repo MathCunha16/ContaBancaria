@@ -27,7 +27,7 @@ public class ContaBancariaMain {
 		System.out.println("==================================================================");
 		System.out.println("Insira aqui o seu nome completo: ");
 		clientOne.setAccountOwner(entrada.nextLine());
-		numberOnStringVerificator = clientOne.getAccountOwner().matches("^[^0-9]*$");
+		numberOnStringVerificator = clientOne.getAccountOwner().matches("^[a-zA-Z ]*$");
 
 		if (clientOne.getAccountOwner().length() < 10 || !numberOnStringVerificator) {
 			do {
@@ -35,7 +35,7 @@ public class ContaBancariaMain {
 				System.err.println("ERRO!");
 				System.out.println("Insira um nome completo e valido, por favor: ");
 				clientOne.setAccountOwner(entrada.nextLine());
-				numberOnStringVerificator = clientOne.getAccountOwner().matches("^[^0-9]*$");
+				numberOnStringVerificator = clientOne.getAccountOwner().matches("^[a-zA-Z ]*$");
 
 			} while (clientOne.getAccountOwner().length() < 10 || numberOnStringVerificator == false);
 		}
@@ -178,7 +178,7 @@ public class ContaBancariaMain {
 
 				System.out.println("Qual o novo nome que você deseja inserir? ");
 				clientOne.setAccountOwner(entrada.nextLine());
-				numberOnStringVerificator = clientOne.getAccountOwner().matches("^[^0-9]*$");
+				numberOnStringVerificator = clientOne.getAccountOwner().matches("^[a-zA-Z ]*$");
 
 				if (clientOne.getAccountOwner().length() < 10 || !numberOnStringVerificator) {
 					do {
@@ -186,7 +186,7 @@ public class ContaBancariaMain {
 						System.err.println("Não foi possivel alterar o nome!");
 						System.out.println("Insira um nome valido, por favor: ");
 						clientOne.setAccountOwner(entrada.nextLine());
-						numberOnStringVerificator = clientOne.getAccountOwner().matches("^[^0-9]*$");
+						numberOnStringVerificator = clientOne.getAccountOwner().matches("^[a-zA-Z ]*$");
 
 					} while (clientOne.getAccountOwner().length() < 10 || numberOnStringVerificator == false);
 				}
